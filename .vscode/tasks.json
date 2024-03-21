@@ -1,0 +1,83 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build_mviz",
+      "type": "shell",
+      "command": "./scripts/build_mviz.sh",
+      "options": {
+        "cwd": "/home/wingboy/mviz_pilot/mviz2_ros"
+      },
+      "problemMatcher": "$gcc",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
+    {
+      "label": "rebuild_mviz",
+      "type": "shell",
+      "command": " echo 12306 |sudo -S rm -rf build devel && ./scripts/build_mviz.sh",
+      "options": {
+        "cwd": "/home/wingboy/mviz_pilot/mviz2_ros"
+      },
+      "problemMatcher": "$gcc",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
+    {
+      "label": "start_mviz_oncar",
+      "type": "shell",
+      "command": "./start_mviz.sh oncar x50",
+      "options": {
+        "cwd": "/home/wingboy/mviz_pilot/mviz2_ros"
+      },
+      "problemMatcher": "$gcc",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
+    {
+      "label": "start_mviz_pc",
+      "type": "shell",
+      "command": "./start_mviz.sh hil_pc x50",
+      "options": {
+        "cwd": "/home/wingboy/mviz_pilot/mviz2_ros"
+      },
+      "problemMatcher": "$gcc",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
+    {
+      "label": "deploy_havp_vm_mviz",
+      "type": "shell",
+      "command": "./scripts/pack.sh /home/wingboy/MyPackage/mviz_havp_vm_v2.0.10 tda4",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "options": {
+        "cwd": "/home/wingboy/mviz_pilot/mviz2_ros"
+      },
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "deploy_apa_vm_mviz",
+      "type": "shell",
+      "command": "./scripts/pack.sh /home/wingboy/MyPackage/mviz_apa_vm_byd_v2.0.7 tda4",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "options": {
+        "cwd": "/home/wingboy/mviz_pilot/mviz2_ros"
+      },
+      "problemMatcher": "$gcc"
+    }
+  ]
+}
