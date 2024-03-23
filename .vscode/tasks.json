@@ -2,11 +2,11 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "build_mviz",
+      "label": "build",
       "type": "shell",
-      "command": "./scripts/build_mviz.sh",
+      "command": "./scripts/build.sh",
       "options": {
-        "cwd": "/home/wingboy/mviz_pilot/mviz2_ros"
+        "cwd": "/home/wingboy/MyCode/slam_in_autodrive"
       },
       "problemMatcher": "$gcc",
       "group": {
@@ -15,11 +15,11 @@
       },
     },
     {
-      "label": "rebuild_mviz",
+      "label": "rebuild",
       "type": "shell",
-      "command": " echo 12306 |sudo -S rm -rf build devel && ./scripts/build_mviz.sh",
+      "command": " echo 12306 |sudo -S rm -rf build && ./scripts/build.sh",
       "options": {
-        "cwd": "/home/wingboy/mviz_pilot/mviz2_ros"
+        "cwd": "/home/wingboy/MyCode/slam_in_autodrive"
       },
       "problemMatcher": "$gcc",
       "group": {
@@ -28,11 +28,11 @@
       },
     },
     {
-      "label": "start_mviz_oncar",
+      "label": "start",
       "type": "shell",
-      "command": "./start_mviz.sh oncar x50",
+      "command": "./run.sh",
       "options": {
-        "cwd": "/home/wingboy/mviz_pilot/mviz2_ros"
+        "cwd": "/home/wingboy/MyCode/slam_in_autodrive"
       },
       "problemMatcher": "$gcc",
       "group": {
@@ -41,43 +41,30 @@
       },
     },
     {
-      "label": "start_mviz_pc",
+      "label": "deploy",
       "type": "shell",
-      "command": "./start_mviz.sh hil_pc x50",
-      "options": {
-        "cwd": "/home/wingboy/mviz_pilot/mviz2_ros"
-      },
-      "problemMatcher": "$gcc",
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-    },
-    {
-      "label": "deploy_havp_vm_mviz",
-      "type": "shell",
-      "command": "./scripts/pack.sh /home/wingboy/MyPackage/mviz_havp_vm_v2.0.10 tda4",
+      "command": "./scripts/deploy.sh ",
       "group": {
         "kind": "build",
         "isDefault": false
       },
       "options": {
-        "cwd": "/home/wingboy/mviz_pilot/mviz2_ros"
+        "cwd": "/home/wingboy/MyCode/slam_in_autodrive"
       },
       "problemMatcher": "$gcc"
     },
     {
-      "label": "deploy_apa_vm_mviz",
+      "label": "dev_env",
       "type": "shell",
-      "command": "./scripts/pack.sh /home/wingboy/MyPackage/mviz_apa_vm_byd_v2.0.7 tda4",
+      "command": "./scripts/dev_env.sh",
+      "options": {
+        "cwd": "/home/wingboy/MyCode/slam_in_autodrive"
+      },
+      "problemMatcher": "$gcc",
       "group": {
         "kind": "build",
-        "isDefault": false
+        "isDefault": true
       },
-      "options": {
-        "cwd": "/home/wingboy/mviz_pilot/mviz2_ros"
-      },
-      "problemMatcher": "$gcc"
     }
   ]
 }

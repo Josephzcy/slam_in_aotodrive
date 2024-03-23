@@ -1,0 +1,48 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
+PROJECT(SLAM_AUTODRIVE)
+
+
+SET(PROJECT_HOME ${CMAKE_CURRENT_SOURCE_DIR})
+message(STATUS "PROJECT_HOME = ${PROJECT_HOME}")
+
+#TODO::设置编译器相关的选项,默认release版本
+SET(CMAKE_CXX_STANDARD 17)
+add_compile_options(--std=c++17)
+
+SET(CMAKE_BUILD_TYPE "debug")
+IF (NOT CMAKE_BUILD_TYPE)
+    SET(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build" FORCE)
+    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2 -DNDEBUG")
+ENDIF ()
+
+# 设置C++编译器选项
+IF (CMAKE_BUILD_TYPE MATCHES "(Debug|debug|DEBUG)")
+    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -fsanitize=address")
+    set(CMAKE_DEBUG_POSTFIX "d")
+ENDIF ()
+
+
+
+# TODO:: 工程二进制文件、库文件以及
+SET(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)   
+SET(LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)  # lib
+SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)  # bin
+
+
+
+INCLUDE_DIRECTORIES(
+  ${PROJECT_HOME}
+)
+
+link_directories(
+
+
+)
+set(GLOBAL_LINK_LIBS
+
+)
+
+#TODO:: 选择性编译子目录
+
+
+add_subdirectory(${PROJECT_HOME}/src)
