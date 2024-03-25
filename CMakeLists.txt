@@ -11,27 +11,31 @@ add_compile_options(--std=c++17)
 
 # SET(CMAKE_BUILD_TYPE "debug")
 IF (NOT CMAKE_BUILD_TYPE)
-    SET(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build" FORCE)
-    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2 -DNDEBUG")
+    # SET(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build" FORCE)
+    # set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2 -DNDEBUG")
+  set(CMAKE_CXX_FLAGS "-w")
+  set(CMAKE_CXX_FLAGS_RELEASE "-O2 -g -ggdb ${CMAKE_CXX_FLAGS}")
 ENDIF ()
 
 # 设置C++编译器选项
 IF (CMAKE_BUILD_TYPE MATCHES "(Debug|debug|DEBUG)")
-    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -fsanitize=address")
-    set(CMAKE_DEBUG_POSTFIX "d")
+  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -fsanitize=address")
+  set(CMAKE_DEBUG_POSTFIX "d")
 ENDIF ()
 
-
+add_definitions("-DCATKIN_ENABLE_TESTING=0")
 
 # TODO:: 工程二进制文件、库文件以及
 SET(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)   
 SET(LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)  # lib
 SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)  # bin
 
+include(${PROJECT_HOME}/cmake/packages.cmake)
 
 
 INCLUDE_DIRECTORIES(
   ${PROJECT_HOME}
+  ${PROJECT_HOME}/build/include   # TODO::ROS消息相关的头文件
 )
 
 link_directories(

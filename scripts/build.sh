@@ -6,5 +6,7 @@ if [ ! -d ${build_path}  ];then
   mkdir -p ${build_path} 
 fi
 
-cd ${build_path} && cmake .. ; make -j8
+cd ${build_path} 
+echo "build path: ${build_path}"
+cmake .. && make -j8
 
