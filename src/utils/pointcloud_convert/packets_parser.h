@@ -6,7 +6,7 @@
 
 #include "common/lidar_utils.h"
 #include "common/point_types.h"
-#include "tools/pointcloud_convert/velodyne_config.h"
+#include "utils/pointcloud_convert/velodyne_config.h"
 
 namespace sad::tools {
 

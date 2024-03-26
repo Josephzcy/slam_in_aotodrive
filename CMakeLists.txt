@@ -39,7 +39,7 @@ INCLUDE_DIRECTORIES(
 )
 
 link_directories(
-
+  ${PROJECT_HOME}/build/src/utils
 
 )
 set(GLOBAL_LINK_LIBS
@@ -48,5 +48,5 @@ set(GLOBAL_LINK_LIBS
 
 #TODO:: 选择性编译子目录
 
-# ADD_SUBDIRECTORY(${PROJECT_HOME}/common)
+ADD_SUBDIRECTORY(${PROJECT_HOME}/common)
 add_subdirectory(${PROJECT_HOME}/src)

@@ -1,5 +1,5 @@
-#include "tools/ui/pangolin_window.h"
-#include "tools/ui/pangolin_window_impl.h"
+#include "utils/ui/pangolin_window.h"
+#include "utils/ui/pangolin_window_impl.h"
 
 #include <glog/logging.h>
 namespace sad::ui {

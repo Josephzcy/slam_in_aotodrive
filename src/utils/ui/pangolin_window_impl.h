@@ -5,10 +5,10 @@
 #include <pangolin/pangolin.h>
 
 #include "common/point_types.h"
-#include "tools/ui/pangolin_window.h"
-#include "tools/ui/ui_car.h"
-#include "tools/ui/ui_cloud.h"
-#include "tools/ui/ui_trajectory.h"
+#include "utils/ui/pangolin_window.h"
+#include "utils/ui/ui_car.h"
+#include "utils/ui/ui_cloud.h"
+#include "utils/ui/ui_trajectory.h"
 
 #include <pcl/filters/voxel_grid.h>
 #include <atomic>

@@ -1,4 +1,17 @@
-add_library(${PROJECT_NAME}_tools
+SET(MODULE_NAME utils)
+SET(MODULE_HOME_PATH ${SRC_HOME_PATH}/${MODULE_NAME})
+message(STATUS "MODULE_HOME_PATH = ${MODULE_HOME_PATH}")
+# set(CMAKE_CXX_STANDARD 17)
+
+
+INCLUDE_DIRECTORIES(
+  ${SRC_HOME_PATH}
+  ${MODULE_HOME_PATH}
+
+)
+
+
+add_library(${PROJECT_NAME}_tools SHARED
         pointcloud_convert/velodyne_convertor.cc
         pointcloud_convert/packets_parser.cc
         ui/pangolin_window.cc
@@ -12,8 +25,8 @@ target_link_libraries(${PROJECT_NAME}_tools
         ${third_party_libs}
         )
 
-add_executable(ui_test ui/ui_test.cc)
-target_link_libraries(ui_test
-        ${PROJECT_NAME}_tools
-        ${third_party_libs}
-        )
+# add_executable(ui_test ui/ui_test.cc)
+# target_link_libraries(ui_test
+#         ${PROJECT_NAME}_tools
+#         ${third_party_libs}
+#         )

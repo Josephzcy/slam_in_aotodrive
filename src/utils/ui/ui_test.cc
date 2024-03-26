@@ -6,7 +6,7 @@
 #include <glog/logging.h>
 #include <pcl/io/pcd_io.h>
 
-#include "tools/ui/pangolin_window.h"
+#include "utils/ui/pangolin_window.h"
 
 DEFINE_string(source, "./data/ch5/first.pcd", "第1个点云路径");
 

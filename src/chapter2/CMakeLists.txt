@@ -26,7 +26,8 @@ foreach(src ${SRC_FILES})
 
   target_link_libraries(${FILENAME}_node
     # ${MODULE_NAME_GLOBAL_LINK_LIBS}
-    # ${GLOBAL_LINKS_LIBS}
+    ${third_party_libs}
+    SLAM_AUTODRIVE_tools
   )
 endforeach()
 

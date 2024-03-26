@@ -3,7 +3,7 @@
 #include <thread>
 
 #include <pangolin/display/default_font.h>
-#include "tools/ui/pangolin_window_impl.h"
+#include "utils/ui/pangolin_window_impl.h"
 
 #include "common/math_utils.h"
 

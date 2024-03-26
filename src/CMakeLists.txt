@@ -7,7 +7,7 @@ FILE(GLOB MODULE_DIRECTORIES ${SRC_HOME_PATH}/*)
 
 foreach(DIR ${MODULE_DIRECTORIES})
   IF(IS_DIRECTORY ${DIR})
-    IF ("${DIR}" MATCHES "chapter2")
+    IF ("${DIR}" MATCHES "chapter2|utils")
       MESSAGE(STATUS "MODULE_DIRECTORIES : ${DIR}")   
       # continue()
       ADD_SUBDIRECTORY(${DIR})
